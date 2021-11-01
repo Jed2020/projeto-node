@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import PaginaPrincipal from "./pages/paginainicial"
+import PaginaPrincipal from "./pages/paginainicial";
+
 
 function Routes() {  
   return (

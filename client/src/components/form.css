@@ -1,4 +1,13 @@
 
   .form{
     max-width: 400px;
+
+  }
+
+  .PaginaPrincipal {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; 
+        
   }
