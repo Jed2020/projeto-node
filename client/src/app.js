@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from "react-router-dom";
-
+import {BrowserRouter as Router, Route} from "react-router-dom";
 import Form from './pages/form';
 import MyForm from './pages/login';
 import "./App.css";
@@ -13,11 +8,11 @@ function App() {
   return (
     <Router>
     <div className="App">
-      <Route>
-      <Link to="./api/insert">< Form /></Link>
+      <Route path ="./api/insert">
+      < Form />
       </Route>
-      <Route>
-      <Link to="./api/select"><MyForm /></Link>
+      <Route path ="./api/select">
+      <MyForm />
       </Route>      
     </div>
     </Router>
