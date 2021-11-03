@@ -2,17 +2,11 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const mysql = require("mysql");
+const db = require("./config/db");
 const bcryptjs = require("bcryptjs");
 const jwt = require('jsonwebtoken');
 
-const db = mysql.createPool({
-    host: "localhost",
-    port: "3306",
-    user: "root",
-    password: "*Jon002015",
-    database: "devdotcom",
-});
+
 
 app.use(cors());
 app.use(express.json());
