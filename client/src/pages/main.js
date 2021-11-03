@@ -1,12 +1,12 @@
 import React from 'react';
-import Form from './form';
-import Login from './login';
+import Register from '../components/register/register';
+import Login from '../components/login/login';
 import "../components/form.css";
 
 function Main() {  
   return (
   <>
-    <Form/>
+    <Register/>
     <Login/> 
   </>  
   );

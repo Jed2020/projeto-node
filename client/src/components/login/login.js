@@ -3,7 +3,7 @@ import{
     Button,
     TextField,
 } from "@material-ui/core";
-import "../components/form.css";
+import "../form.css";
 import Axios from 'axios';
 
 function MyForm() {
