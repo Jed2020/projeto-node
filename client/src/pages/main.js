@@ -3,7 +3,7 @@ import Form from './form';
 import Login from './login';
 import "../components/form.css";
 
-function PaginaPrincipal() {  
+function Main() {  
   return (
   <>
     <Form/>
@@ -12,4 +12,4 @@ function PaginaPrincipal() {
   );
 }
 
-export default PaginaPrincipal;
+export default Main;
