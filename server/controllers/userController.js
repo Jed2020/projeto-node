@@ -42,21 +42,20 @@ class userController {
             const sqlSelect =
             `SELECT * FROM  tbcadastro WHERE cpf = ${mysql.escape(cpf)}`;
             db.query(sqlSelect, [cpf, senha], (err, result) => {
-                console.log(result);
-                console.log(err);
                 if (err){return res.status(500).send (err)}
                 if (result.length < 1) {
                     return res.status(401).send({msg: "Falha na autenticação."})
                 }
-                const token = verifyJWT(req, result)
-                if (!token){                
-                    return res.status(401).send({msg: "Falha na autenticação."})
-                } else {
-                    return res.status(200).send({
-                        msg: "Login Realizado.",
-                        token: token
-                    });
-                }
+                verifyJWT(req, result).then((token) => {
+                    if (!token){                
+                        return res.status(401).send({msg: "Falha na autenticação."})
+                    } else {
+                        return res.status(200).send({
+                            msg: "Login Realizado.",
+                            token: token
+                        });
+                    }
+                })  
             });    
         };  
     }; 
