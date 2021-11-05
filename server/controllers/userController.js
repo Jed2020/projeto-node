@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const db = require("../config/db");
 const mysql = require("mysql");
-const bcryptjs = require("bcryptjs");
+const bcrypt = require('bcrypt');
 const verifyJWT = require('../config/jwt');
 
 class userController {
@@ -20,8 +20,8 @@ class userController {
             
             const sqlInsert =
             "INSERT INTO tbcadastro (cpf, nome, cargo, email, senha) VALUES (?,?,?,?,?)";
-            bcryptjs.hash(senha, 10, (errBcrypt, hash) => {
-                if (errBcrypt) {return res.status(500).send ({error: bcryptjs }) }    
+            bcrypt.hash(senha, 10, (errBcrypt, hash) => {
+                if (errBcrypt) {return res.status(500).send ({error: bcrypt }) }    
             db.query(sqlInsert, [cpf, nome, cargo, email, hash], (err, result) => {
                 console.log(result);
                 console.log(err);
@@ -48,8 +48,14 @@ class userController {
                 if (result.length < 1) {
                     return res.status(401).send({msg: "Falha na autenticação."})
                 }
-                if (!verifyJWT){
+                const token = verifyJWT(req, result)
+                if (!token){                
                     return res.status(401).send({msg: "Falha na autenticação."})
+                } else {
+                    return res.status(200).send({
+                        msg: "Login Realizado.",
+                        token: token
+                    });
                 }
             });    
         };  

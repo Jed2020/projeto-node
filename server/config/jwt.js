@@ -1,12 +1,13 @@
 require("dotenv").config();
 const jwt = require('jsonwebtoken');
 const mysql = require("mysql");
-const bcryptjs = require("bcryptjs");
+const bcrypt = require('bcrypt');
 
-function verifyJWT(req, res) {
-    bcryptjs.compare(req.body.senha, result[0].senha, (err, success) => {
+function verifyJWT(req, result) {
+    console.log({req:req.body, result});
+    bcrypt.compare(req.body.senha, result[0].senha, (err, success) => {
         if (err) {
-            return res.status(401).send({msg: "Falha na autenticação."})
+            return false
         }
         if (success) {
             let token = jwt.sign({
@@ -17,10 +18,7 @@ function verifyJWT(req, res) {
             {
                 expiresIn: "1h"
             }); 
-            return res.status(200).send({
-                msg: "Login Realizado.",
-                token: token
-            });
+            return token
         }
     });
 }

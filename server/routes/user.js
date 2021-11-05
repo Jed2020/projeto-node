@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
 // Rota de cadastro de usuário
 router.post("/api/insert", userController.register());
 
-
+// Rota de login de usuário
 router.post("/api/select", userController.login());
 
 module.exports = router;
