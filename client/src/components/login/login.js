@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import{
     Button,
     TextField,
@@ -9,11 +10,13 @@ import Axios from 'axios';
 function MyForm() {
     const [cpf, setCpf] = useState('');
     const [senha, setSenha] = useState('');
+    const history = useHistory();
 
     const submitReview = () => {
       Axios.post("http://localhost:3001/api/select", {
         cpf: cpf, senha: senha,
       }).then(() => {
+        history.push('/curriculum');
         alert('Inserido com Sucesso!')
       });
     };
