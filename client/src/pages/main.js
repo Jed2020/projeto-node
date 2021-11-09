@@ -3,6 +3,7 @@ import Register from '../components/register/register';
 import Login from '../components/login/login';
 import "../components/form.css";
 
+
 function Main() {  
   return (
   <>

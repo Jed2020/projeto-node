@@ -1,6 +1,5 @@
 require("dotenv").config();
 const jwt = require('jsonwebtoken');
-const mysql = require("mysql");
 const bcrypt = require('bcrypt');
 
 async function verifyJWT(req, result) {
