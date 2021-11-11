@@ -12,7 +12,9 @@ const initalValues = {
   senha: "",
 };
 
+
 const FormRegister = () => {
+  
   return (
     <div className="form">
       <h1>Faça seu de Cadastro</h1>
@@ -26,8 +28,7 @@ const FormRegister = () => {
           senha: string().required("Por favot digite a senha").min(6, "Senha de no mínimo 6 caracteres"),
         })}
         onSubmit={(values, formikHelpers) => {
-          Axios.post("http://localhost:3001/api/insert", {
-          cpf: values, nome: values, cargo: values, email: values, senha: values,});
+          Axios.post("http://localhost:3001/api/insert", values)
           console.log(values);
           formikHelpers.resetForm();
         }}
@@ -98,7 +99,6 @@ const FormRegister = () => {
             <Button
               type="submit"
               variant="contained"
-              onClick={submitReview}
               color="primary"
               size="large"
               disabled={!isValid || !dirty}
