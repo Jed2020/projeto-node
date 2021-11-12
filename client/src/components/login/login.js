@@ -19,7 +19,7 @@ function MyForm() {
       .then((response) => {         
           localStorage.setItem("cpf", data.cpf);       
           localStorage.setItem("token", response.data.token); 
-          api.defaults.headers.Authorization = "Bearer " + response.data.token;  
+          api.defaults.headers.Authorization = "Bearer " + response.data.token;
           history.push('/curriculum');
           alert('Inserido com Sucesso!');       
       })

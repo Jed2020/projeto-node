@@ -15,8 +15,14 @@ function Schooling() {
   const [situacao, setSituacao] = useState('');
     
   const submitReview = () => {
+
+    const cpf = localStorage.getItem("cpf")
     api.post("/api/schooling", {
-        curso: curso, instituicao: instituicao, conclusao: conclusao, situacao: situacao,
+        curso: curso, 
+        instituicao: instituicao, 
+        conclusao: conclusao, 
+        situacao: situacao,
+        id_cpf: cpf
     }).then(() => {
       alert('Cadastro realizado com Sucesso!')
     });

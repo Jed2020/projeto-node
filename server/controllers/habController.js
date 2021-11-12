@@ -10,18 +10,18 @@ class habController {
     curriculum(){
 
         return (req, res) => {
-
     
             const experiencia = req.body.experiencia
             const atividades_exercidas = req.body.atividades_exercidas
             const data_inicio = req.body.data_inicio
             const data_final = req.body.data_final
-            const id_cpf = req.body.id_cpf
-                    
+            const id_cpf = req.body.id_cpf                    
             
             const sqlInsert =
             "INSERT INTO tbhabilidades (experiencia, atividades_exercidas, data_inicio, data_final, id_cpf) VALUES (?,?,?,?,?)";
-            db.query(sqlInsert, [experiencia, atividades_exercidas, data_inicio, data_final, id_cpf], (err, result) => {
+            db.query(sqlInsert, 
+                [experiencia, atividades_exercidas, 
+                data_inicio, data_final, id_cpf], (err, result) => {
                 console.log(result);
                 console.log(err);
                 if (err){
@@ -34,16 +34,16 @@ class habController {
     schooling(){
         return (req, res) => {
             
-            const id_escolaridade = ''
             const curso = req.query.curso
             const instituicao = req.query.instituicao
             const conclusao = req.query.conclusao
             const situacao = req.query.situacao
-            const id_cpf = localStorage.getItem("cpf")     
+            const id_cpf = req.body.id_cpf     
         
             const sqlSelect =
-            `SELECT * FROM  tbcadastro WHERE cpf = ${mysql.escape(cpf)}`;
-            db.query(sqlSelect, [id_escolaridade, curso, instituicao, conclusao, situacao, id_cpf], (err, result) => {
+            "INSERT INTO tbescolaridade (curso, instituicao, conclusao, situacao, id_cpf) VALUES (?,?,?,?,?)";
+            db.query(sqlSelect, [curso, instituicao, conclusao, 
+                situacao, id_cpf], (err, result) => {
                 console.log(result);
                 console.log(err);
                 if (err){
