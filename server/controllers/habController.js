@@ -11,17 +11,17 @@ class habController {
 
         return (req, res) => {
 
-            const id_habilidades = ''
+    
             const experiencia = req.body.experiencia
             const atividades_exercidas = req.body.atividades_exercidas
             const data_inicio = req.body.data_inicio
             const data_final = req.body.data_final
-            const id_cpf = JSON.parse(localStorage.getItem("cpf") )          
+            const id_cpf = req.body.id_cpf
+                    
             
             const sqlInsert =
             "INSERT INTO tbhabilidades (experiencia, atividades_exercidas, data_inicio, data_final, id_cpf) VALUES (?,?,?,?,?)";
-            (() => {                 
-            db.query(sqlInsert, [id_habilidades, experiencia, atividades_exercidas, data_inicio, data_final, id_cpf], (err, result) => {
+            db.query(sqlInsert, [experiencia, atividades_exercidas, data_inicio, data_final, id_cpf], (err, result) => {
                 console.log(result);
                 console.log(err);
                 if (err){
@@ -29,7 +29,6 @@ class habController {
                 }
                 return res.status(201).send({msg: "Cadastro Realizado."})
             });
-            });  
         };  
     }
     schooling(){

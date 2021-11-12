@@ -15,8 +15,15 @@ function Curriculum() {
   const [data_final, setData_final] = useState('');
     
   const submitReview = () => {
+
+    const cpf = localStorage.getItem("cpf") 
+
     Axios.post("http://localhost:3001/api/curriculum", {
-      experiencia: experiencia, atividades_exercidas: atividades_exercidas, data_inicio: data_inicio, data_final: data_final,
+      experiencia: experiencia, 
+      atividades_exercidas: atividades_exercidas, 
+      data_inicio: data_inicio, 
+      data_final: data_final, 
+      id_cpf: cpf
     }).then(() => {
       alert('Cadastro realizado com Sucesso!')
     });

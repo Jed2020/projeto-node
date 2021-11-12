@@ -5,7 +5,7 @@ import{
     TextField,
 } from "@material-ui/core";
 import "../form.css";
-import Axios from 'axios';
+import { api } from "../../utils/api";
 
 
 function MyForm() {
@@ -15,9 +15,11 @@ function MyForm() {
 
     const submitReview = () => {
       const data = { cpf: cpf, senha: senha };
-      Axios.post("http://localhost:3001/api/select",data)
-      .then(() => {         
-          localStorage.setItem("cpf", data.cpf);
+      api.post("/api/select",data)
+      .then((response) => {         
+          localStorage.setItem("cpf", data.cpf);       
+          localStorage.setItem("token", response.data.token); 
+          api.defaults.headers.Authorization = "Bearer " + response.data.token;  
           history.push('/curriculum');
           alert('Inserido com Sucesso!');       
       })
