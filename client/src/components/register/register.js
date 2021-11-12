@@ -2,7 +2,7 @@ import React from "react";
 import { TextField, Button, Box } from "@material-ui/core";
 import { Field, Form, Formik } from "formik";
 import { object, string } from "yup";
-import Axios from 'axios';
+import { api } from "../../utils/api";
 
 const initalValues = {
   cpf: "",
@@ -28,7 +28,7 @@ const FormRegister = () => {
           senha: string().required("Por favot digite a senha").min(6, "Senha de no mínimo 6 caracteres"),
         })}
         onSubmit={(values, formikHelpers) => {
-          Axios.post("http://localhost:3001/api/insert", values)
+          api.post("/api/insert", values)
           console.log(values);
           formikHelpers.resetForm();
         }}

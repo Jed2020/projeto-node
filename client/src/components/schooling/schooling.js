@@ -3,8 +3,8 @@ import{
     Button,
     TextField,
 } from "@material-ui/core";
-import Axios from 'axios';
 import "../form.css";
+import { api } from "../../utils/api";
 
 
 function Schooling() {
@@ -15,7 +15,7 @@ function Schooling() {
   const [situacao, setSituacao] = useState('');
     
   const submitReview = () => {
-    Axios.post("http://localhost:3001/api/schooling", {
+    api.post("/api/schooling", {
         curso: curso, instituicao: instituicao, conclusao: conclusao, situacao: situacao,
     }).then(() => {
       alert('Cadastro realizado com Sucesso!')

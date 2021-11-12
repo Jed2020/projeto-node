@@ -3,8 +3,8 @@ import{
     Button,
     TextField,
 } from "@material-ui/core";
-import Axios from 'axios';
 import "../form.css";
+import { api } from "../../utils/api";
 
 
 function Curriculum() {
@@ -18,7 +18,7 @@ function Curriculum() {
 
     const cpf = localStorage.getItem("cpf") 
 
-    Axios.post("http://localhost:3001/api/curriculum", {
+    api.post("/api/curriculum", {
       experiencia: experiencia, 
       atividades_exercidas: atividades_exercidas, 
       data_inicio: data_inicio, 
