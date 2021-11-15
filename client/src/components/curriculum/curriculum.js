@@ -4,6 +4,7 @@ import{
     TextField,
 } from "@material-ui/core";
 import "../form.css";
+import Typography from '../body/typography';
 import { api } from "../../utils/api";
 
 
@@ -30,8 +31,15 @@ function Curriculum() {
   };       
   
   return (
-    <div className="form">
+    <div className="cadastroLogin">
+      <Typography 
+        color="inherit"
+        align="center"
+        variant="h5"
+        sx={{ mb: 4, mt: { sx: 4, sm: 10 } }}
+      >
       <h1>Cadastre suas Habilidades</h1>
+      </Typography>
       <form onSubmit={(event) => {
         event.preventDefault();
       }}>
