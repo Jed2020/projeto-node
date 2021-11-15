@@ -3,6 +3,7 @@ import { TextField, Button, Box } from "@material-ui/core";
 import { Field, Form, Formik } from "formik";
 import { object, string } from "yup";
 import { api } from "../../utils/api";
+import Typography from '../body/typography';
 
 const initalValues = {
   cpf: "",
@@ -16,8 +17,15 @@ const initalValues = {
 const FormRegister = () => {
   
   return (
-    <div className="form">
+    <div id="register" className="cadastroLogin">
+      <Typography 
+        color="inherit"
+        align="center"
+        variant="h5"
+        sx={{ mb: 4, mt: { sx: 4, sm: 10 } }}
+      >
       <h1>Faça seu de Cadastro</h1>
+      </Typography>
       <Formik
         initialValues={initalValues}
         validationSchema={object({

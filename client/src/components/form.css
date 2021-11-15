@@ -1,13 +1,38 @@
 
-  .form{
-    max-width: 400px;
+.form{
+  text-align: center;
+  max-width: 300px;
+  padding-top: 10.5px;
+  flex-wrap: wrap;
+  margin-top: 150px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  vertical-align: top;
+  flex-direction: row;
+  cursor: pointer;
+  align-items: flex-start;
+}
+.cadastroLogin{
+  padding: 10px 10px;
+  text-align: center;
+  max-width: 300px;
+  padding-top: 10.5px;
+  flex-wrap: wrap;
+  margin-top: 150px;
+  margin-left: 15%;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;  
+  vertical-align: top;
+  flex-direction: row;
+  cursor: pointer;
+  align-items: flex-start;
+  float: left;
+}
 
-  }
+.footer{
+  margin-top: 750px;
 
-  #root {
+}
 
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly; 
-        
-  }
