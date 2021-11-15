@@ -7,15 +7,15 @@ import{
 import "../form.css";
 import { api } from "../../utils/api";
 
-
 function MyForm() {
     const [cpf, setCpf] = useState('');
     const [senha, setSenha] = useState('');
     const history = useHistory();
 
     const submitReview = () => {
+
       const data = { cpf: cpf, senha: senha };
-      api.post("/api/select",data)
+      api.post("/api/select", data)
       .then((response) => {         
           localStorage.setItem("cpf", data.cpf);       
           localStorage.setItem("token", response.data.token); 
