@@ -4,7 +4,11 @@ const bcrypt = require('bcrypt');
 
 async function verifyJWT(req, result) {
     try {
-        const match = await bcrypt.compare(req.body.senha, result[0].senha);
+        console.log(result[0].SENHA)
+        console.log(req.body.senha)
+        const match = await bcrypt.compare(req.body.senha, result[0].SENHA);
+        console.log(match)
+        
         if (match) {        
             return jwt.sign({
                 cpf: result[0].CPF,               

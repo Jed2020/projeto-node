@@ -38,7 +38,7 @@ function Curriculum() {
         variant="h5"
         sx={{ mb: 4, mt: { sx: 4, sm: 10 } }}
       >
-      <h1>Cadastre suas Habilidades</h1>
+      Cadastre suas Habilidades
       </Typography>
       <form onSubmit={(event) => {
         event.preventDefault();
@@ -89,4 +89,4 @@ function Curriculum() {
   );
 }
   
-  export default Curriculum;
+export default Curriculum;

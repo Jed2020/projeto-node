@@ -47,7 +47,7 @@ class userController {
                     return res.status(401).send({msg: "Falha na autenticação."})
                 }
                 verifyJWT(req, result).then((token) => {
-                    if (!token){                
+                    if (!token){               
                         return res.status(401).send({msg: "Falha na autenticação."})
                     } else {
                         return res.status(200).send({

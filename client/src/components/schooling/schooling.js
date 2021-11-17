@@ -37,7 +37,7 @@ function Schooling() {
         variant="h5"
         sx={{ mb: 4, mt: { sx: 4, sm: 10 } }}
       >
-      <h1>Cadastre sua Escolaridade</h1>
+      Cadastre sua Escolaridade
       </Typography>
       <form onSubmit={(event) => {
         event.preventDefault();
@@ -88,4 +88,4 @@ function Schooling() {
   );
 }
   
-  export default Schooling;
+export default Schooling;

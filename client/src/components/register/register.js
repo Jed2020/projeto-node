@@ -24,7 +24,7 @@ const FormRegister = () => {
         variant="h5"
         sx={{ mb: 4, mt: { sx: 4, sm: 10 } }}
       >
-      <h1>Faça seu de Cadastro</h1>
+      Faça seu de Cadastro
       </Typography>
       <Formik
         initialValues={initalValues}

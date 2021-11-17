@@ -40,9 +40,10 @@ class habController {
             const situacao = req.query.situacao
             const id_cpf = req.body.id_cpf     
         
-            const sqlSelect =
+            const sqlInsert =
             "INSERT INTO tbescolaridade (curso, instituicao, conclusao, situacao, id_cpf) VALUES (?,?,?,?,?)";
-            db.query(sqlSelect, [curso, instituicao, conclusao, 
+            db.query(sqlInsert, 
+                [curso, instituicao, conclusao, 
                 situacao, id_cpf], (err, result) => {
                 console.log(result);
                 console.log(err);
