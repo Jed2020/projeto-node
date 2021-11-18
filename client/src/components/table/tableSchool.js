@@ -33,7 +33,7 @@ export default function DataTable() {
         sx={{ mb: 4, mt: { sx: 4, sm: 10 } }}
       >
         Relatório de Escolaridade e Idiomas
-        </Typography>  
+      </Typography>  
       <DataGrid
         rows={rows}
         columns={columns}

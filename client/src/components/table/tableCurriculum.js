@@ -7,7 +7,7 @@ export default function DataTable() {
   const [rows, setRows] = useState([]);
   const columns = [
     { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'experiencia', headerName: 'Experiencia', width: 200 },
+    { field: 'experiencia', headerName: 'Experiencia', width: 200},
     { field: 'atividades_exercidas', headerName: 'Atividades Exercidas', width: 170 },
     { field: 'data_inicio', headerName: 'Data Inicio', width: 150 },
     { field: 'data_final', headerName: 'Data Final', width: 150},
@@ -33,8 +33,8 @@ export default function DataTable() {
         variant="h5"
         sx={{ mb: 4, mt: { sx: 4, sm: 10 } }}
       >
-        Relatório de Habiliddes
-        </Typography>
+        Relatório de Habilidades
+      </Typography>
       <DataGrid
         rows={rows}
         columns={columns}
