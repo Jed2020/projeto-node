@@ -7,18 +7,17 @@ export default function DataTable() {
   const [rows, setRows] = useState([]);
   const columns = [
     { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'experiencia', headerName: 'Experiencia', width: 200 },
-    { field: 'atividades_exercidas', headerName: 'Atividades Exercidas', width: 170 },
-    { field: 'data_inicio', headerName: 'Data Inicio', width: 150 },
-    { field: 'data_final', headerName: 'Data Final', width: 150},
+    { field: 'curso', headerName: 'Tipo de Curso', width: 200 },
+    { field: 'instituicao', headerName: 'Instituição', width: 170 },
+    { field: 'conclusao', headerName: 'Data Conclusão', width: 150 },
+    { field: 'situacao', headerName: 'Situação', width: 150},
     { field: 'id_cpf', headerName: 'CPF', type: 'number', width: 150},
   ];
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/api/tableCurriculum").then(function(response) {
+    Axios.get("http://localhost:3001/api/tableSchool").then(function(response) {
       response.data.forEach(element => {
-        element.data_inicio = new Date(element.data_inicio)
-        element.data_final = new Date(element.data_final)
+        element.conclusao = new Date(element.conclusao)
       });
 
       setRows(response.data);
@@ -33,8 +32,8 @@ export default function DataTable() {
         variant="h5"
         sx={{ mb: 4, mt: { sx: 4, sm: 10 } }}
       >
-        Relatório de Habiliddes
-        </Typography>
+        Relatório de Escolaridade e Idiomas
+        </Typography>  
       <DataGrid
         rows={rows}
         columns={columns}

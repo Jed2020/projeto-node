@@ -23,7 +23,10 @@ router.post("/api/curriculum", habController.curriculum());
 // Rota de cadastro de escolaridade
 router.post("/api/school", habController.school());
 
-// Rota de tabela de calculo 
+// Rota de tabela de habilidades
 router.get("/api/tableCurriculum", habController.tableCurriculum());
+
+// Rota de tabela de escolaridade
+router.get("/api/tableSchool", habController.tableSchool());
 
 module.exports = router;

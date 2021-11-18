@@ -78,6 +78,30 @@ class habController {
                 return res.status(201).send(result)
             });
         };  
+    };
+    tableSchool(){
+
+        return (req, res) => {
+
+            var id = 0
+            var curso = 0
+            var instituicao = 0
+            var conclusao = 0
+            var situacao = 0 
+            var id_cpf = 0
+            
+
+            const sqlSelect =
+            "SELECT id, curso, instituicao, conclusao, situacao, id_cpf FROM tbescolaridade";   
+            db.query(sqlSelect, [id, curso, instituicao, conclusao, situacao, id_cpf], (err, result) => {
+                console.log(result);
+                console.log(err);
+                if (err){
+                    return res.status(500).send(err)
+                }
+                return res.status(201).send(result)
+            });
+        };  
     };    
 }
 
