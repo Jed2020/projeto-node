@@ -21,6 +21,6 @@ router.post("/api/select", userController.login());
 router.post("/api/curriculum", habController.curriculum());
 
 // Rota de cadastro de escolaridade
-router.post("/api/schooling", habController.schooling());
+router.post("/api/school", habController.school());
 
 module.exports = router;

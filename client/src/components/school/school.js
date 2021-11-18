@@ -8,7 +8,7 @@ import Typography from '../body/typography';
 import { api } from "../../utils/api";
 
 
-function Schooling() {
+function School() {
 
   const [curso, setCurso] = useState('');
   const [instituicao, setInstituicao] = useState('');
@@ -17,13 +17,14 @@ function Schooling() {
     
   const submitReview = () => {
 
-    const cpf = localStorage.getItem("cpf")
-    api.post("/api/schooling", {
-        curso: curso, 
-        instituicao: instituicao, 
-        conclusao: conclusao, 
-        situacao: situacao,
-        id_cpf: cpf
+    const cpf = localStorage.getItem("cpf") 
+
+    api.post("/api/school", {
+      curso: curso, 
+      instituicao: instituicao, 
+      conclusao: conclusao, 
+      situacao: situacao, 
+      id_cpf: cpf
     }).then(() => {
       alert('Cadastro realizado com Sucesso!')
     });
@@ -45,7 +46,7 @@ function Schooling() {
         <TextField
           id="curso"
           name="curso"
-          label="Curso"
+          label="Tipo Escolaridade"
           variant="outlined"
           margin="dense"
           fullWidth
@@ -55,7 +56,7 @@ function Schooling() {
         <TextField
           id="instituicao"
           name="instituicao"
-          label="Instituição"
+          label="Nome da Instituição"
           variant="outlined"
           margin="dense"
           fullWidth
@@ -64,7 +65,7 @@ function Schooling() {
         />
         <TextField
           id="conclusao"
-          label="Data Conclusão"
+          label="Data de Conclusão"
           variant="outlined"
           margin="dense"
           fullWidth
@@ -72,14 +73,15 @@ function Schooling() {
           onChange={(event) => {setConclusao(event.target.value)}}
         />
         <TextField
-          id="situacao"
-          label="Se não conclui, qual a situação"
-          variant="outlined"
-          margin="dense"
-          fullWidth
-          value={situacao}
-          onChange={(event) => {setSituacao(event.target.value)}}
-        />
+            id="situacao"
+            name="situacao"
+            label="Situação, se não concluído"
+            variant="outlined"
+            margin="dense"
+            fullWidth
+            value={situacao}
+            onChange={(event) => {setSituacao(event.target.value)}}
+          />
         <Button onClick={submitReview} className="btn-form" variant="contained" color="primary">
           Cadastrar
         </Button>
@@ -88,4 +90,4 @@ function Schooling() {
   );
 }
   
-export default Schooling;
+export default School;

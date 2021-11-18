@@ -31,20 +31,21 @@ class habController {
             });
         };  
     }
-    schooling(){
+    school(){
+
         return (req, res) => {
+    
+            const curso = req.body.curso
+            const instituicao = req.body.instituicao
+            const conclusao = req.body.conclusao
+            const situacao = req.body.situacao
+            const id_cpf = req.body.id_cpf                    
             
-            const curso = req.query.curso
-            const instituicao = req.query.instituicao
-            const conclusao = req.query.conclusao
-            const situacao = req.query.situacao
-            const id_cpf = req.body.id_cpf     
-        
             const sqlInsert =
             "INSERT INTO tbescolaridade (curso, instituicao, conclusao, situacao, id_cpf) VALUES (?,?,?,?,?)";
             db.query(sqlInsert, 
-                [curso, instituicao, conclusao, 
-                situacao, id_cpf], (err, result) => {
+                [curso, instituicao, 
+                conclusao, situacao, id_cpf], (err, result) => {
                 console.log(result);
                 console.log(err);
                 if (err){
@@ -53,7 +54,7 @@ class habController {
                 return res.status(201).send({msg: "Cadastro Realizado."})
             });
         };  
-    };  
+    };
 }
 
 module.exports = habController;

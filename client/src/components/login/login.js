@@ -22,7 +22,7 @@ function MyForm() {
           localStorage.setItem("token", response.data.token); 
           api.defaults.headers.Authorization = "Bearer " + response.data.token;
           history.push('/curriculum');
-          alert('Inserido com Sucesso!');       
+          alert('Login feito com Sucesso!');       
       })
     };
   
