@@ -35,4 +35,6 @@ router.get("/api/editableCurriculum", habController.editableCurriculum());
 // Rota de update tabela de habilidade 
 router.put("/api/editableCurriculum/:id", habController.updateCurriculum());
 
+// Rota de delete tabela de habilidade 
+router.delete("/api/editableCurriculum/:id", habController.deleteCurriculum());
 module.exports = router;

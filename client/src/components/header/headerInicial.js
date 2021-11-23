@@ -33,7 +33,7 @@ function AppAppBar() {
               variant="h6"
               underline="none"
               sx={rightLink}
-              component={RouterLink} to="/curriculum"
+              component={RouterLink} to="/inicial"
             >
               {'Voltar'}
             </Link>

@@ -129,8 +129,8 @@ class habController {
     updateCurriculum(){
 
         return (req, res) => {
-
-            const id = req.body.id
+            
+            const id = req.params.id
             const experiencia = req.body.experiencia
             const atividades_exercidas = req.body.atividades_exercidas
             const data_inicio = req.body.data_inicio
@@ -139,8 +139,25 @@ class habController {
             
 
             const sqlUpdate =
-            "UPDATE tbhabilidades SET id = ?, experiencia = ?, atividades_exercidas = ?, data_inicio = ?, data_final = ?, id_cpf = ?";   
-            db.query(sqlUpdate, [id, experiencia, atividades_exercidas, data_inicio, data_final, id_cpf], (err, result) => {
+            "UPDATE tbhabilidades SET experiencia = ?, atividades_exercidas = ?, data_inicio = ?, data_final = ?, id_cpf = ? WHERE id = ?";   
+            db.query(sqlUpdate, [experiencia, atividades_exercidas, data_inicio, data_final, id_cpf, id], (err, result) => {
+                console.log(err);
+                if (err){
+                return res.status(500).send(err)
+                }
+                return res.status(200).send(result)
+            });
+        };  
+    };
+    deleteCurriculum(){
+
+        return (req, res) => {
+            
+            const id = req.params.id
+           
+            const sqlUpdate =
+            "DELETE FROM tbhabilidades WHERE id = ?";   
+            db.query(sqlUpdate, [id], (err, result) => {
                 console.log(err);
                 if (err){
                 return res.status(500).send(err)

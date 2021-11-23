@@ -21,7 +21,7 @@ function MyForm() {
           localStorage.setItem("cpf", data.cpf);       
           localStorage.setItem("token", response.data.token); 
           api.defaults.headers.Authorization = "Bearer " + response.data.token;
-          history.push('/curriculum');
+          history.push('/inicial');
           alert('Login feito com Sucesso!');       
       })
     };
