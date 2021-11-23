@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Table, TableContainer, TableHead, TableCell, TableBody, TableRow, Modal, Button, TextField } from '@material-ui/core';
 import { Edit, Delete } from '@material-ui/icons';
 import { api } from "../../utils/api";
+import Typography from '../body/typography';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -156,6 +157,14 @@ export default function EditableCurriculum() {
   return (
     <div className="App">
       <br />
+      <Typography 
+        color="inherit"
+        align="center"
+        variant="h5"
+        sx={{ mb: 4, mt: { sx: 4, sm: 10 } }}
+      >
+        Edição e Exclusão de Habilidades
+      </Typography>
       <TableContainer>
         <Table>
           <TableHead>

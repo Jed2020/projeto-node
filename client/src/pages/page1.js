@@ -3,7 +3,7 @@ import Header from '../components/header/headerCurriculum';
 import Card from '../components/card/card';
 import "../components/form.css";
 
-function Page2() {  
+function Page1() {  
   return (
   <>
     <Header/>
@@ -12,4 +12,4 @@ function Page2() {
   );
 }
 
-export default Page2;
+export default Page1;
