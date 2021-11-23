@@ -29,4 +29,10 @@ router.get("/api/tableCurriculum", habController.tableCurriculum());
 // Rota de tabela de escolaridade
 router.get("/api/tableSchool", habController.tableSchool());
 
+// Rota de visualização tabela de habilidade 
+router.get("/api/editableCurriculum", habController.editableCurriculum());
+
+// Rota de update tabela de habilidade 
+router.put("/api/updateCurriculum/:id", habController.updateCurriculum());
+
 module.exports = router;

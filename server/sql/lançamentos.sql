@@ -20,7 +20,7 @@ INSERT INTO tbescolaridade (id_escolaridade, curso, instituicao, conclusao, situ
 VALUES ('2', 'python','alura', '2012-02-12', 'concluido', '12345678912');
 
 DELETE FROM tbcadastro where cpf =  '99988877755';
-TRUNCATE TABLE tbcalculo;
+TRUNCATE TABLE tbcadastro;
 
 INSERT INTO tbhabilidades (id_habilidades, experiencia, atividades_exercidas, data_inicio, DATA_FINAL, id_cpf)
 VALUES ('3', 'python','desenvolvedor', '2012-02-12', '2012-02-13', '22244455588');
@@ -36,6 +36,8 @@ ALTER TABLE tbcadastro
 
 ALTER TABLE tbcalculo
    ADD COLUMN INDICE VARCHAR(300) NULL;
+   
+ALTER TABLE tbescolaridade RENAME COLUMN ID_ESCOLARIDADE TO ID;
 
 ALTER TABLE tbcalculo DROP COLUMN RESULTADO;
 

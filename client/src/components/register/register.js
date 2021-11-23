@@ -17,7 +17,7 @@ const initalValues = {
 const FormRegister = () => {
   
   return (
-    <div id="register" className="cadastroLogin">
+    <div id='cadastro' className="cadastroLogin">
       <Typography 
         color="inherit"
         align="center"
@@ -29,7 +29,7 @@ const FormRegister = () => {
       <Formik
         initialValues={initalValues}
         validationSchema={object({
-          cpf: string().required().max(11, "Máximo de 11 dígitos"),
+          cpf: string().required().min(11).max(11, "Máximo de 11 dígitos"),
           email: string().required("Por favot digite o email").email("E-mail invalido"),
           cargo: string().required("Por favot digite o cargo").min(2, "Cargo muito curto"),
           nome: string().required("Por favot digite o nome").min(2, "Nome muito curto"),
@@ -93,7 +93,7 @@ const FormRegister = () => {
             <Box height={14} />
             <Field
               name="senha"
-              type="senha"
+              type="password"
               as={TextField}
               variant="outlined"
               color="primary"

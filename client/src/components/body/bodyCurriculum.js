@@ -51,7 +51,7 @@ export default function BodyCurriculum() {
             position: 'absolute',
             top: -180,
             opacity: 0.7,
-          }}
+          }} 
         />
         <Typography variant="h4" marked="center" component="h2" sx={{ mb: 14 }}>
           Como funciona:
@@ -107,7 +107,7 @@ export default function BodyCurriculum() {
           size="large"
           variant="contained"
           component="a"
-          href="/premium-themes/onepirate/sign-up/"
+          href="#cadastrohab"
           sx={{ mt: 8 }}
         >
           VAMOS COMEÇAR

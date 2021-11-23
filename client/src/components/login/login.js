@@ -27,7 +27,7 @@ function MyForm() {
     };
   
     return (
-      <div className="cadastroLogin">
+      <div id='cadastro' className="cadastroLogin">
         <Typography 
         color="inherit"
         align="center"

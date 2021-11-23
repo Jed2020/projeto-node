@@ -31,6 +31,7 @@ function AppAppBar() {
               color="inherit"
               variant="h6"
               underline="none"
+              href="#cadastro"  
               sx={rightLink}
             >
               {'Cadastrar'}

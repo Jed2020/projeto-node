@@ -31,7 +31,7 @@ function School() {
   };       
   
   return (
-    <div className="cadastroLogin">
+    <div id='cadastrohab' className="cadastroLogin">
       <Typography 
         color="inherit"
         align="center"
