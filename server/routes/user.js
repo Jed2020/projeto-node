@@ -33,6 +33,6 @@ router.get("/api/tableSchool", habController.tableSchool());
 router.get("/api/editableCurriculum", habController.editableCurriculum());
 
 // Rota de update tabela de habilidade 
-router.put("/api/updateCurriculum/:id", habController.updateCurriculum());
+router.put("/api/editableCurriculum/:id", habController.updateCurriculum());
 
 module.exports = router;

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import {makeStyles} from '@material-ui/core/styles';
 import {Table, TableContainer, TableHead, TableCell, TableBody, TableRow, Modal, Button, TextField} from '@material-ui/core';
 import {Edit, Delete} from '@material-ui/icons';
+import { api } from "../../utils/api";
 
-const baseUrl="http://localhost:3001/api/editableCurriculum";
+
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -34,6 +34,7 @@ export default function EditableCurriculum() {
   const [data, setData]= useState([]);
   const [modalEditar, setModalEditar]= useState(false);
   const [modalEliminar, setModalEliminar]= useState(false);
+
   const [idSelecionado, setIdSelecionado]=useState({
 
     id: '',
@@ -53,7 +54,7 @@ export default function EditableCurriculum() {
   }
 
   const metodoGet=async()=>{
-    await axios.get(baseUrl)
+    await api.get("/api/editableCurriculum")
     .then(response=>{
      setData(response.data);
     }).catch(error=>{
@@ -63,7 +64,7 @@ export default function EditableCurriculum() {
 
   
   const metodoPut=async()=>{
-    await axios.put(baseUrl+idSelecionado.id, idSelecionado)
+    await api.put("/api/editableCurriculum/:id"+idSelecionado.id, idSelecionado)
     .then(response=>{
       var dataNew= data;
       dataNew.forEach(linha=>{
@@ -83,7 +84,7 @@ export default function EditableCurriculum() {
   }
 
   const metodoDelete=async()=>{
-    await axios.delete(baseUrl+idSelecionado.id)
+    await api.delete("/api/editableCurriculum"+idSelecionado.id)
     .then(response=>{
       setData(data.filter(linha=>linha.id!==idSelecionado.id));
       abrirFecharModalEliminar();
@@ -106,10 +107,9 @@ export default function EditableCurriculum() {
     setModalEliminar(!modalEliminar);
   }
 
-  useEffect(async()=>{
-    await metodoGet();
-  },[])
-
+  useEffect(()=>{
+    metodoGet();
+    },[])
   
   const bodyEditar=(
     <div className={styles.modal}>
@@ -119,6 +119,8 @@ export default function EditableCurriculum() {
       <TextField className={styles.inputMaterial} label="Experiência" name="experiencia" onChange={handleChange} value={idSelecionado && idSelecionado.experiencia}/>          
       <br />
       <TextField className={styles.inputMaterial} label="Atividades Exercidas" name="atividades_exercidas" onChange={handleChange} value={idSelecionado && idSelecionado.atividades_exercidas}/>
+      <br />
+      <TextField className={styles.inputMaterial} label="Data Inicial" name="data_inicio" onChange={handleChange} value={idSelecionado && idSelecionado.data_inicio}/>
       <br />
       <TextField className={styles.inputMaterial} label="Data Final" name="data_final" onChange={handleChange} value={idSelecionado && idSelecionado.data_final}/>
       <br />

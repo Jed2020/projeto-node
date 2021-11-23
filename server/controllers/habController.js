@@ -25,7 +25,7 @@ class habController {
                 console.log(result);
                 console.log(err);
                 if (err){
-                    return res.status(500).send (err)
+                return res.status(500).send (err)
                 }
                 return res.status(201).send({msg: "Cadastro Realizado."})
             });
@@ -49,7 +49,7 @@ class habController {
                 console.log(result);
                 console.log(err);
                 if (err){
-                    return res.status(500).send (err)
+                return res.status(500).send (err)
                 }
                 return res.status(201).send({msg: "Cadastro Realizado."})
             });
@@ -73,7 +73,7 @@ class habController {
                 console.log(result);
                 console.log(err);
                 if (err){
-                    return res.status(500).send(err)
+                return res.status(500).send(err)
                 }
                 return res.status(201).send(result)
             });
@@ -97,7 +97,7 @@ class habController {
                 console.log(result);
                 console.log(err);
                 if (err){
-                    return res.status(500).send(err)
+                return res.status(500).send(err)
                 }
                 return res.status(201).send(result)
             });
@@ -120,7 +120,7 @@ class habController {
             db.query(sqlSelect, [id, experiencia, atividades_exercidas, data_inicio, data_final, id_cpf], (err, result) => {
                 console.log(err);
                 if (err){
-                    return res.status(500).send(err)
+                return res.status(500).send(err)
                 }
                 return res.status(200).send(result)
             });
@@ -130,26 +130,25 @@ class habController {
 
         return (req, res) => {
 
-            var id = 0
-            var experiencia = 0
-            var atividades_exercidas = 0
-            var data_inicio = 0
-            var data_final = 0 
-            var id_cpf = 0
+            const id = req.body.id
+            const experiencia = req.body.experiencia
+            const atividades_exercidas = req.body.atividades_exercidas
+            const data_inicio = req.body.data_inicio
+            const data_final = req.body.data_final
+            const id_cpf = req.body.id_cpf
             
 
             const sqlUpdate =
-            "UPDATE tbhabilidades SET id = id, experiencia = experiencia, atividades_exercidas = atividades_exercidas, data_inicio = data_inicio, data_final = data_final, id_cpf = id_cpf";   
+            "UPDATE tbhabilidades SET id = ?, experiencia = ?, atividades_exercidas = ?, data_inicio = ?, data_final = ?, id_cpf = ?";   
             db.query(sqlUpdate, [id, experiencia, atividades_exercidas, data_inicio, data_final, id_cpf], (err, result) => {
                 console.log(err);
                 if (err){
-                    return res.status(500).send(err)
+                return res.status(500).send(err)
                 }
                 return res.status(200).send(result)
             });
         };  
     };
-
 }
 
 module.exports = habController;
