@@ -91,7 +91,7 @@ class userController {
 
             const sqlUpdate =
             "UPDATE tbcadastro SET nome = ?, cargo = ?, email = ? WHERE cpf = ?";   
-            db.query(sqlUpdate, [cpf, nome, cargo, email], (err, result) => {
+            db.query(sqlUpdate, [nome, cargo, email, cpf], (err, result) => {
                 console.log(err);
                 if (err){
                 return res.status(500).send(err)

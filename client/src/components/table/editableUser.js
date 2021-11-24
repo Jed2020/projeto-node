@@ -67,7 +67,6 @@ export default function EditableCurriculum() {
         var dataNew = data;
         dataNew.forEach(linha => {
           if (idSelecionado.cpf === linha.cpf) {
-            linha.cpf = idSelecionado.cpf;
             linha.nome = idSelecionado.nome;
             linha.cargo = idSelecionado.cargo;
             linha.email = idSelecionado.email;
