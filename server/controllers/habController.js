@@ -155,9 +155,9 @@ class habController {
             
             const id = req.params.id
            
-            const sqlUpdate =
+            const sqlDelete =
             "DELETE FROM tbhabilidades WHERE id = ?";   
-            db.query(sqlUpdate, [id], (err, result) => {
+            db.query(sqlDelete, [id], (err, result) => {
                 console.log(err);
                 if (err){
                 return res.status(500).send(err)
@@ -166,6 +166,69 @@ class habController {
             });
         };  
     };
+    editableSchool(){
+
+        return (req, res) => {
+
+            var id = 0
+            var curso = 0
+            var instituicao = 0
+            var conclusao = 0
+            var situacao = 0  
+            var id_cpf = 0
+            
+
+            const sqlSelect =
+            "SELECT id, curso, instituicao, conclusao, situacao, id_cpf FROM tbescolaridade";   
+            db.query(sqlSelect, [id, curso, instituicao, conclusao, situacao, id_cpf], (err, result) => {
+                console.log(err);
+                if (err){
+                return res.status(500).send(err)
+                }
+                return res.status(200).send(result)
+            });
+        };  
+    };
+    updateSchool(){
+
+        return (req, res) => {
+            
+            const id = req.params.id
+            const curso = req.body.curso
+            const instituicao = req.body.instituicao
+            const conclusao = req.body.conclusao
+            const situacao = req.body.situacao
+            const id_cpf = req.body.id_cpf
+            
+
+            const sqlUpdate =
+            "UPDATE tbescolaridade SET curso = ?, instituicao = ?, conclusao = ?, situacao = ?, id_cpf = ? WHERE id = ?";   
+            db.query(sqlUpdate, [curso, instituicao, conclusao, situacao, id_cpf, id], (err, result) => {
+                console.log(err);
+                if (err){
+                return res.status(500).send(err)
+                }
+                return res.status(200).send(result)
+            });
+        };  
+    };deleteSchool(){
+
+        return (req, res) => {
+            
+            const id = req.params.id
+           
+            const sqlDelete =
+            "DELETE FROM tbescolaridade WHERE id = ?";   
+            db.query(sqlDelete, [id], (err, result) => {
+                console.log(err);
+                if (err){
+                return res.status(500).send(err)
+                }
+                return res.status(200).send(result)
+            });
+        };  
+    };
+
 }
 
 module.exports = habController;
