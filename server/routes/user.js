@@ -17,6 +17,15 @@ router.post("/api/insert", userController.register());
 // Rota de login de usuário
 router.post("/api/select", userController.login());
 
+// Rota de visualização edição tabela de Cadastro
+router.get("/api/editableUser", userController.editableUser());
+
+// Rota de update tabela de Cadastro
+router.put("/api/editableUser/:cpf", userController.updateUser());
+
+// Rota de delete tabela de Cadastro
+router.delete("/api/editableUser/:cpf", userController.deleteUser());
+
 // Rota de cadastro de habilidade
 router.post("/api/curriculum", habController.curriculum());
 

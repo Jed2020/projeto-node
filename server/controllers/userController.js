@@ -58,6 +58,64 @@ class userController {
                 })  
             });    
         };  
+    };
+    editableUser(){
+
+        return (req, res) => {
+
+            const cpf = 0
+            const nome = 0
+            const cargo = 0
+            const email = 0          
+
+            const sqlSelect =
+            "SELECT cpf, nome, cargo, email FROM tbcadastro";   
+            db.query(sqlSelect, [cpf, nome, cargo, email], (err, result) => {
+                console.log(err);
+                if (err){
+                return res.status(500).send(err)
+                }
+                return res.status(200).send(result)
+            });
+        };  
+    };
+    updateUser(){
+
+        return (req, res) => {
+            
+            const cpf = req.params.cpf
+            const nome = req.body.nome
+            const cargo = req.body.cargo
+            const email = req.body.email
+            
+
+            const sqlUpdate =
+            "UPDATE tbcadastro SET nome = ?, cargo = ?, email = ? WHERE cpf = ?";   
+            db.query(sqlUpdate, [cpf, nome, cargo, email], (err, result) => {
+                console.log(err);
+                if (err){
+                return res.status(500).send(err)
+                }
+                return res.status(200).send(result)
+            });
+        };  
+    };
+    deleteUser(){
+
+        return (req, res) => {
+            
+            const cpf = req.params.cpf
+           
+            const sqlDelete =
+            "DELETE FROM tbcadastro WHERE cpf = ?";   
+            db.query(sqlDelete, [cpf], (err, result) => {
+                console.log(err);
+                if (err){
+                return res.status(500).send(err)
+                }
+                return res.status(200).send(result)
+            });
+        };  
     }; 
 }
 

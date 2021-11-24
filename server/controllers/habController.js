@@ -211,7 +211,8 @@ class habController {
                 return res.status(200).send(result)
             });
         };  
-    };deleteSchool(){
+    };
+    deleteSchool(){
 
         return (req, res) => {
             
@@ -228,7 +229,6 @@ class habController {
             });
         };  
     };
-
 }
 
 module.exports = habController;
