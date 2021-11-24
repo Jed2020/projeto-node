@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Link as RouterLink } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import AppBar from './appBar';
@@ -22,7 +21,7 @@ function AppAppBar() {
             variant="h6"
             underline="none"
             color="inherit"
-            href="/curriculum"
+            href="/inicial"
             sx={{ fontSize: 24 }}
           >
             {'DevDotCom'}
@@ -33,9 +32,9 @@ function AppAppBar() {
               variant="h6"
               underline="none"
               sx={rightLink}
-              component={RouterLink} to="/inicial"
+              
             >
-              {'Voltar'}
+              {''}
             </Link>
             <Link
               variant="h6"
