@@ -23,6 +23,8 @@ function MyForm() {
           api.defaults.headers.Authorization = "Bearer " + response.data.token;
           history.push('/inicial');
           alert('Login feito com Sucesso!');       
+      }).catch(error => {
+        alert('Login não realizado, erros nas informações.')
       })
     };
   
