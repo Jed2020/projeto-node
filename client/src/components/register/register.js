@@ -36,8 +36,11 @@ const FormRegister = () => {
           senha: string().required("Por favot digite a senha").min(6, "Senha de no mínimo 6 caracteres"),
         })}
         onSubmit={(values, formikHelpers) => {
-          api.post("/api/insert", values)
-          console.log(values);
+          api.post("/api/insert", values).then(function(response) {
+            alert('Cadastro realizado com Sucesso!')
+          }).catch(error => {
+            alert('Cadastro não realizado.')
+          })          
           formikHelpers.resetForm();
         }}
       >

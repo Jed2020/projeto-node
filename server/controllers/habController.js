@@ -22,8 +22,6 @@ class habController {
             db.query(sqlInsert, 
                 [experiencia, atividades_exercidas, 
                 data_inicio, data_final, id_cpf], (err, result) => {
-                console.log(result);
-                console.log(err);
                 if (err){
                 return res.status(500).send (err)
                 }
@@ -46,8 +44,6 @@ class habController {
             db.query(sqlInsert, 
                 [curso, instituicao, 
                 conclusao, situacao, id_cpf], (err, result) => {
-                console.log(result);
-                console.log(err);
                 if (err){
                 return res.status(500).send (err)
                 }
@@ -70,8 +66,6 @@ class habController {
             const sqlSelect =
             "SELECT id, experiencia, atividades_exercidas, data_inicio, data_final, id_cpf FROM tbhabilidades";   
             db.query(sqlSelect, [id, experiencia, atividades_exercidas, data_inicio, data_final, id_cpf], (err, result) => {
-                console.log(result);
-                console.log(err);
                 if (err){
                 return res.status(500).send(err)
                 }
@@ -94,8 +88,6 @@ class habController {
             const sqlSelect =
             "SELECT id, curso, instituicao, conclusao, situacao, id_cpf FROM tbescolaridade";   
             db.query(sqlSelect, [id, curso, instituicao, conclusao, situacao, id_cpf], (err, result) => {
-                console.log(result);
-                console.log(err);
                 if (err){
                 return res.status(500).send(err)
                 }
@@ -118,7 +110,6 @@ class habController {
             const sqlSelect =
             "SELECT id, experiencia, atividades_exercidas, data_inicio, data_final, id_cpf FROM tbhabilidades";   
             db.query(sqlSelect, [id, experiencia, atividades_exercidas, data_inicio, data_final, id_cpf], (err, result) => {
-                console.log(err);
                 if (err){
                 return res.status(500).send(err)
                 }
@@ -141,7 +132,6 @@ class habController {
             const sqlUpdate =
             "UPDATE tbhabilidades SET experiencia = ?, atividades_exercidas = ?, data_inicio = ?, data_final = ?, id_cpf = ? WHERE id = ?";   
             db.query(sqlUpdate, [experiencia, atividades_exercidas, data_inicio, data_final, id_cpf, id], (err, result) => {
-                console.log(err);
                 if (err){
                 return res.status(500).send(err)
                 }
@@ -158,7 +148,6 @@ class habController {
             const sqlDelete =
             "DELETE FROM tbhabilidades WHERE id = ?";   
             db.query(sqlDelete, [id], (err, result) => {
-                console.log(err);
                 if (err){
                 return res.status(500).send(err)
                 }
@@ -181,7 +170,6 @@ class habController {
             const sqlSelect =
             "SELECT id, curso, instituicao, conclusao, situacao, id_cpf FROM tbescolaridade";   
             db.query(sqlSelect, [id, curso, instituicao, conclusao, situacao, id_cpf], (err, result) => {
-                console.log(err);
                 if (err){
                 return res.status(500).send(err)
                 }
@@ -204,7 +192,6 @@ class habController {
             const sqlUpdate =
             "UPDATE tbescolaridade SET curso = ?, instituicao = ?, conclusao = ?, situacao = ?, id_cpf = ? WHERE id = ?";   
             db.query(sqlUpdate, [curso, instituicao, conclusao, situacao, id_cpf, id], (err, result) => {
-                console.log(err);
                 if (err){
                 return res.status(500).send(err)
                 }
@@ -221,7 +208,6 @@ class habController {
             const sqlDelete =
             "DELETE FROM tbescolaridade WHERE id = ?";   
             db.query(sqlDelete, [id], (err, result) => {
-                console.log(err);
                 if (err){
                 return res.status(500).send(err)
                 }

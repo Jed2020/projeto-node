@@ -23,8 +23,6 @@ class userController {
             bcrypt.hash(senha, 10, (errBcrypt, hash) => {
                 if (errBcrypt) {return res.status(500).send ({error: bcrypt }) }    
             db.query(sqlInsert, [cpf, nome, cargo, email, hash], (err, result) => {
-                console.log(result);
-                console.log(err);
                 if (err){
                     return res.status(500).send (err)
                 }
@@ -71,7 +69,6 @@ class userController {
             const sqlSelect =
             "SELECT cpf, nome, cargo, email FROM tbcadastro";   
             db.query(sqlSelect, [cpf, nome, cargo, email], (err, result) => {
-                console.log(err);
                 if (err){
                 return res.status(500).send(err)
                 }
@@ -92,7 +89,6 @@ class userController {
             const sqlUpdate =
             "UPDATE tbcadastro SET nome = ?, cargo = ?, email = ? WHERE cpf = ?";   
             db.query(sqlUpdate, [nome, cargo, email, cpf], (err, result) => {
-                console.log(err);
                 if (err){
                 return res.status(500).send(err)
                 }
@@ -109,7 +105,6 @@ class userController {
             const sqlDelete =
             "DELETE FROM tbcadastro WHERE cpf = ?";   
             db.query(sqlDelete, [cpf], (err, result) => {
-                console.log(err);
                 if (err){
                 return res.status(500).send(err)
                 }
