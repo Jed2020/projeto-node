@@ -13,6 +13,10 @@ const rightLink = {
 };
 
 function AppAppBar() {
+
+  function logOut() {    
+    localStorage.clear();
+  };
   return (
     <div>
       <AppBar position="fixed" style={{ background: '#28282a'}}>
@@ -43,7 +47,11 @@ function AppAppBar() {
               href="#cadastro"  
               sx={{ ...rightLink}}
             >
+            <RouterLink to ="/"
+             onClick={logOut}
+            > 
               {'Sair'}
+            </RouterLink> 
             </Link>
           </Box>
         </Toolbar>

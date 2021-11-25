@@ -10,6 +10,9 @@ import { api } from "../../utils/api";
 
 function Curriculum() {
 
+  // Criar método na API para validar o token
+  // Em cada página enviar o token para a API
+
   const [experiencia, setExperiencia] = useState('');
   const [atividades_exercidas, setAtividades_exercidas] = useState('');
   const [data_inicio, setData_inicio] = useState('');
