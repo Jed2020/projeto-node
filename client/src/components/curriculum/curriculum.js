@@ -3,7 +3,7 @@ import{
     Button,
     TextField,
 } from "@material-ui/core";
-import "../form.css";
+import "../assets/form.css";
 import Typography from '../body/typography';
 import { api } from "../../utils/api";
 

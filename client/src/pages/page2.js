@@ -3,7 +3,6 @@ import Curriculum from '../components/curriculum/curriculum';
 import School from '../components/school/school';
 import Header from '../components/header/headerCurriculum';
 import BodyCurriculum from '../components/body/bodyCurriculum';
-import "../components/form.css";
 
 function Page2() {  
   return (
