@@ -165,7 +165,10 @@ export default function EditableCurriculum() {
       >
         Edição e Exclusão de Habilidades
       </Typography>
-      <TableContainer>
+      <TableContainer 
+        pageSize={5}
+        rowsPerPageOptions={[5]}
+        >
         <Table>
           <TableHead>
             <TableRow>

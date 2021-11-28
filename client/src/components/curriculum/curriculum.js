@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import{
+    Grid,
     Button,
     TextField,
 } from "@material-ui/core";
-import "../assets/form.css";
+
 import Typography from '../body/typography';
 import { api } from "../../utils/api";
 
@@ -35,6 +36,14 @@ function Curriculum() {
   
   return (
     <div className="cadastroLogin">
+      <Grid
+      container
+      justify="center"
+      alignItems="center"
+      direction="column"
+      style={{ minHeight: "100vh" }}
+      spacing={5}
+    >
       <Typography 
         color="inherit"
         align="center"
@@ -88,6 +97,7 @@ function Curriculum() {
           Cadastrar
         </Button>
       </form>  
+      </Grid>
     </div>
   );
 }

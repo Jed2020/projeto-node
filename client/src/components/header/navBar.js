@@ -13,6 +13,18 @@ import Divider from "@material-ui/core/Divider";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
+import {
+  createTheme,
+  ThemeProvider,
+  responsiveFontSizes,
+} from "@material-ui/core/styles";
+
+let darkTheme = createTheme({
+  palette: {
+    type: "dark",
+  },
+});
+darkTheme = responsiveFontSizes(darkTheme);
 
 const navigationLinks = [
   { name: "Inicio", href: "/inicial" },
@@ -35,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "black",
     borderRadius: 0,
     height: 30,
-    width: "110px",
+    width: "140px",
     border: "2px solid gray",
     borderLeft: "12px solid transparent",
     borderRight: "12px solid transparent",
@@ -46,7 +58,8 @@ export default function Header() {
   const styles = useStyles();
   const [open, setOpen] = useState(false);
   return (
-    <AppBar position="sticky" color="default"style={{ background: '#28282a'}}>
+    <ThemeProvider theme={darkTheme}>
+    <AppBar position="sticky" color="default">
       <Container maxWidth="md">
         <ToolBar disableGutters>
           <Avatar className={styles.avatar}>DevDotCom</Avatar>
@@ -82,14 +95,13 @@ export default function Header() {
           onKeyPress={() => setOpen(false)}
           role="button"
           tabIndex={0}
-          style={{ background: '#28282a'}}
         >
           <IconButton>
             <ChevronRightIcon />
           </IconButton>
         </div>
         <Divider />
-        <List style={{ background: '#28282a'}}>
+        <List>
           {navigationLinks.map((item) => (
             <ListItem key={item.name}>
               <Link
@@ -106,5 +118,6 @@ export default function Header() {
         </List>
       </SwipeableDrawer>
     </AppBar>
+    </ThemeProvider>
   );
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import TableCurriculum from '../components/table/tableCurriculum';
 import TableSchool from '../components/table/tableSchool';
 import Header from '../components/header/navBar';
+import Footer from '../components/footer/footer';
 
 function Page3() {  
   return (
@@ -9,6 +10,7 @@ function Page3() {
     <Header/>
     <TableCurriculum/>
     <TableSchool/>
+    <Footer/>
   </>  
   );
 }

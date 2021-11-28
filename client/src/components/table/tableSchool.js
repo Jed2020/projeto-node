@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { DataGrid } from '@mui/x-data-grid';
 import Axios from 'axios';
 import Typography from '../body/typography';
+import "../assets/form.css";
 
 export default function DataTable() {
   const [rows, setRows] = useState([]);
@@ -25,7 +26,7 @@ export default function DataTable() {
   }, []);
 
   return (
-    <div style={{ height: 400, width: '100%' }}>
+    <div style={{ height: 400, width: '100%'}} className="tableSchool">
       <Typography 
         color="inherit"
         align="center"
@@ -39,7 +40,6 @@ export default function DataTable() {
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}
-        checkboxSelection
       />
     </div>
   );

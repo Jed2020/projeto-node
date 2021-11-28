@@ -1,6 +1,7 @@
 import React from 'react';
 import EditableCurriculum from '../components/table/editableCurriculum';
 import Header from '../components/header/navBar';
+import Footer from '../components/footer/footer';
 
 
 function Page4() {  
@@ -8,6 +9,7 @@ function Page4() {
   <>
     <Header/>
     <EditableCurriculum/>
+    <Footer/>
   </>  
   );
 }

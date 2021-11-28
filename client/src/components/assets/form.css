@@ -20,15 +20,15 @@
   padding-top: 10.5px;
   flex-wrap: wrap;
   margin-top: 150px;
-  margin-left: 15%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   width: 100%;  
   vertical-align: top;
   flex-direction: row;
   cursor: pointer;
   align-items: flex-start;
-  float: left;
 }
 
-
+.tableSchool{
+  padding-top: 100.5px;
+}
