@@ -1,6 +1,6 @@
 import React from 'react';
 import EditableCurriculum from '../components/table/editableCurriculum';
-import Header from '../components/header/headerEditableCurriculum';
+import Header from '../components/header/navBar';
 
 
 function Page4() {  

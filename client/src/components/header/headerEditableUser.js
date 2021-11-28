@@ -26,7 +26,6 @@ function AppAppBar() {
             variant="h6"
             underline="none"
             color="inherit"
-            href="/editableUser"
             sx={{ fontSize: 24 }}
           >
             {'DevDotCom'}

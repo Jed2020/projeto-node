@@ -1,6 +1,6 @@
 import React from 'react';
 import EditableSchool from '../components/table/editableSchool';
-import Header from '../components/header/headerEditableSchool';
+import Header from '../components/header/navBar';
 
 
 function Page5() {  
