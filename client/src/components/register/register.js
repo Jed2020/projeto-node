@@ -23,7 +23,7 @@ const FormRegister = () => {
       spacing={0}
       direction="column"
       alignItems="center"
-      justify="center"
+      justifyContent="center"
       style={{ minHeight: '100vh' }}
       >
       <Typography 
