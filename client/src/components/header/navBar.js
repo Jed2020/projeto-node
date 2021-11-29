@@ -28,9 +28,10 @@ darkTheme = responsiveFontSizes(darkTheme);
 
 const navigationLinks = [
   { name: "Inicio", href: "/inicial" },
-  { name: "Usuários", href: "/editableUser" },
-  { name: "Cadastro", href: "/curriculum" },
-  { name: "Relatórios", href: "/table" },
+  { name: "Usuário", href: "/editableUser" },
+  { name: "Habilidade", href: "/curriculum" },
+  { name: "Escolaridade", href: "/school" },
+  { name: "Relatório", href: "/table" },
   { name: "Editar Hab.", href: "/editableCurriculum" },
   { name: "Editar Esc.", href: "/editableSchool" },
   { name: "Sair", href: "/" },
@@ -38,7 +39,7 @@ const navigationLinks = [
 
 const useStyles = makeStyles((theme) => ({
   link: {
-    marginRight: 20,
+    marginRight: 15,
     color: "white",
   },
   avatar: {
