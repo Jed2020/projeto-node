@@ -61,11 +61,12 @@ class habController {
             var data_inicio = 0
             var data_final = 0 
             var id_cpf = 0
+            var nome = 0
             
 
             const sqlSelect =
-            "SELECT id, experiencia, atividades_exercidas, data_inicio, data_final, id_cpf FROM tbhabilidades";   
-            db.query(sqlSelect, [id, experiencia, atividades_exercidas, data_inicio, data_final, id_cpf], (err, result) => {
+            "SELECT id, experiencia, atividades_exercidas, data_inicio, data_final, id_cpf, nome FROM tbhabilidades AS T1 INNER JOIN tbcadastro AS T2 ON T1.id_cpf = T2.cpf";   
+            db.query(sqlSelect, [id, experiencia, atividades_exercidas, data_inicio, data_final, id_cpf, nome], (err, result) => {
                 if (err){
                 return res.status(500).send(err)
                 }
@@ -83,11 +84,12 @@ class habController {
             var conclusao = 0
             var situacao = 0 
             var id_cpf = 0
+            var nome = 0
             
 
             const sqlSelect =
-            "SELECT id, curso, instituicao, conclusao, situacao, id_cpf FROM tbescolaridade";   
-            db.query(sqlSelect, [id, curso, instituicao, conclusao, situacao, id_cpf], (err, result) => {
+            "SELECT id, curso, instituicao, conclusao, situacao, id_cpf, nome FROM tbescolaridade AS T1 INNER JOIN tbcadastro AS T2 ON T1.id_cpf = T2.cpf";   
+            db.query(sqlSelect, [id, curso, instituicao, conclusao, situacao, id_cpf, nome], (err, result) => {
                 if (err){
                 return res.status(500).send(err)
                 }
@@ -105,11 +107,12 @@ class habController {
             var data_inicio = 0
             var data_final = 0 
             var id_cpf = 0
+            var nome = 0
             
 
             const sqlSelect =
-            "SELECT id, experiencia, atividades_exercidas, data_inicio, data_final, id_cpf FROM tbhabilidades";   
-            db.query(sqlSelect, [id, experiencia, atividades_exercidas, data_inicio, data_final, id_cpf], (err, result) => {
+            "SELECT id, experiencia, atividades_exercidas, data_inicio, data_final, id_cpf, nome FROM tbhabilidades AS T1 INNER JOIN tbcadastro AS T2 ON T1.id_cpf = T2.cpf ";   
+            db.query(sqlSelect, [id, experiencia, atividades_exercidas, data_inicio, data_final, id_cpf, nome], (err, result) => {
                 if (err){
                 return res.status(500).send(err)
                 }
@@ -165,14 +168,17 @@ class habController {
             var conclusao = 0
             var situacao = 0  
             var id_cpf = 0
+            var nome = 0
             
 
             const sqlSelect =
-            "SELECT id, curso, instituicao, conclusao, situacao, id_cpf FROM tbescolaridade";   
-            db.query(sqlSelect, [id, curso, instituicao, conclusao, situacao, id_cpf], (err, result) => {
+            "SELECT id, curso, instituicao, conclusao, situacao, id_cpf, nome FROM tbescolaridade AS T1 INNER JOIN tbcadastro AS T2 ON T1.id_cpf = T2.cpf";   
+            db.query(sqlSelect, [id, curso, instituicao, conclusao, situacao, id_cpf, nome], (err, result) => {
                 if (err){
+                console.log(err);
                 return res.status(500).send(err)
                 }
+                console.log(result);
                 return res.status(200).send(result)
             });
         };  

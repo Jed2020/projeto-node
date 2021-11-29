@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
+import { useHistory } from "react-router-dom";
 import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -26,16 +27,8 @@ let darkTheme = createTheme({
 });
 darkTheme = responsiveFontSizes(darkTheme);
 
-const navigationLinks = [
-  { name: "Inicio", href: "/inicial" },
-  { name: "Usuário", href: "/editableUser" },
-  { name: "Habilidade", href: "/curriculum" },
-  { name: "Escolaridade", href: "/school" },
-  { name: "Relatório", href: "/table" },
-  { name: "Editar Hab.", href: "/editableCurriculum" },
-  { name: "Editar Esc.", href: "/editableSchool" },
-  { name: "Sair", href: "/" },
-];
+
+
 
 const useStyles = makeStyles((theme) => ({
   link: {
@@ -58,6 +51,26 @@ const useStyles = makeStyles((theme) => ({
 export default function Header() {
   const styles = useStyles();
   const [open, setOpen] = useState(false);
+
+  const navigationLinks = [
+    { name: "Inicio", href: "/inicial" },
+    { name: "Usuário", href: "/editableUser" },
+    { name: "Habilidade", href: "/curriculum" },
+    { name: "Escolaridade", href: "/school" },
+    { name: "Relatório", href: "/table" },
+    { name: "Editar Hab.", href: "/editableCurriculum" },
+    { name: "Editar Esc.", href: "/editableSchool" },
+    { name: "Sair", onClick:logOut },
+  ];
+
+  const history = useHistory();
+
+  function logOut() {    
+    localStorage.clear();
+    history.push('/');
+  };
+  
+
   return (
     <ThemeProvider theme={darkTheme}>
     <AppBar position="sticky" color="default">
@@ -71,7 +84,14 @@ export default function Header() {
                 color="textPrimary"
                 variant="button"
                 underline="none"
-                href={item.href}
+                component="button"
+                onClick={()=> { 
+                  if (item.onClick){
+                    item.onClick()
+                  }else {
+                    history.push(item.href);
+                  }
+                }}
                 key={item.name}
               >
                 {item.name}

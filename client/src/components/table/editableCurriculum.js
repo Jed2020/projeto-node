@@ -42,7 +42,8 @@ export default function EditableCurriculum() {
     atividades_exercidas: '',
     data_inicio: '',
     data_final: '',
-    id_cpf: ''
+    id_cpf: '',
+    nome: ''
   })
 
   const handleChange = e => {
@@ -74,6 +75,7 @@ export default function EditableCurriculum() {
             linha.data_inicio = idSelecionado.data_inicio;
             linha.data_final = idSelecionado.data_final;
             linha.id_cpf = idSelecionado.id_cpf;
+            linha.nome = idSelecionado.nome;
           }
         });
         setData(dataNew);
@@ -101,6 +103,7 @@ export default function EditableCurriculum() {
       data_inicio: linha.data_inicio.substring(0, 10),
       data_final: linha.data_final.substring(0, 10),
       id_cpf: linha.id_cpf,
+      nome: linha.nome,
     }
 
     );
@@ -134,6 +137,8 @@ export default function EditableCurriculum() {
       <TextField className={styles.inputMaterial} label="Data Final" name="data_final" onChange={handleChange} value={idSelecionado && idSelecionado.data_final} />
       <br />
       <TextField className={styles.inputMaterial} label="CPF" name="id_cpf" onChange={handleChange} value={idSelecionado && idSelecionado.id_cpf} />
+      <br />
+      <TextField className={styles.inputMaterial} label="Nome" name="nome" onChange={handleChange} value={idSelecionado && idSelecionado.nome} />
       <br /><br />
       <div align="right">
         <Button color="primary" onClick={() => metodoPut()}>Editar</Button>
@@ -178,6 +183,7 @@ export default function EditableCurriculum() {
               <TableCell>Data Inicial</TableCell>
               <TableCell>Data Final</TableCell>
               <TableCell>CPF</TableCell>
+              <TableCell>Nome</TableCell>
               <TableCell>Opção</TableCell>
             </TableRow>
           </TableHead>
@@ -191,6 +197,7 @@ export default function EditableCurriculum() {
                 <TableCell>{linha.data_inicio.substring(0, 10)}</TableCell>
                 <TableCell>{linha.data_final.substring(0, 10)}</TableCell>
                 <TableCell>{linha.id_cpf}</TableCell>
+                <TableCell>{linha.nome}</TableCell>
                 <TableCell>
                   <Edit className={styles.iconos} onClick={() => selecionarLinha(linha, 'Editar')} />
                   &nbsp;&nbsp;&nbsp;

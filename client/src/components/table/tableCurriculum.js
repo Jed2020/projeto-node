@@ -12,6 +12,7 @@ export default function DataTable() {
     { field: 'data_inicio', headerName: 'Data Inicio', width: 150 },
     { field: 'data_final', headerName: 'Data Final', width: 150},
     { field: 'id_cpf', headerName: 'CPF', type: 'number', width: 150},
+    { field: 'nome', headerName: 'Nome', width: 200},
   ];
 
   useEffect(() => {

@@ -50,3 +50,6 @@ select * from minha_lixeira;
 
 alter table tbcadastro modify column senha varchar(100);
 alter table tbcalculo modify column senha varchar(100);
+
+SELECT id, curso, instituicao, conclusao, situacao, id_cpf FROM tbescolaridade 
+AS T1 INNER JOIN tbcadastro ON T1.id_cpf = tbcadastro.nome;

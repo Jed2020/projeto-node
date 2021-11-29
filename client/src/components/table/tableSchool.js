@@ -8,11 +8,12 @@ export default function DataTable() {
   const [rows, setRows] = useState([]);
   const columns = [
     { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'curso', headerName: 'Tipo de Curso', width: 200 },
-    { field: 'instituicao', headerName: 'Instituição', width: 170 },
+    { field: 'curso', headerName: 'Tipo de Curso', width: 250 },
+    { field: 'instituicao', headerName: 'Instituição', width: 250 },
     { field: 'conclusao', headerName: 'Data Conclusão', width: 150 },
     { field: 'situacao', headerName: 'Situação', width: 150},
     { field: 'id_cpf', headerName: 'CPF', type: 'number', width: 150},
+    { field: 'nome', headerName: 'Nome', width: 200},
   ];
 
   useEffect(() => {
