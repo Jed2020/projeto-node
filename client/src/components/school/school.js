@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import{
     Button,
     TextField,
+    Grid
 } from "@material-ui/core";
 import "../assets/form.css";
 import Typography from '../body/typography';
@@ -31,7 +32,15 @@ function School() {
   };       
   
   return (
-    <div id='cadastrohab' className="cadastroLogin">
+    <Grid
+      id="cadastrohab"
+      container
+      spacing={0}
+      direction="column"
+      alignItems="center"
+      justify="center"
+      style={{ minHeight: '80vh' }}
+    >
       <Typography 
         color="inherit"
         align="center"
@@ -86,7 +95,7 @@ function School() {
           Cadastrar
         </Button>
       </form>  
-    </div>
+    </Grid>
   );
 }
   

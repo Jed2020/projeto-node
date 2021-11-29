@@ -35,14 +35,14 @@ function Curriculum() {
   };       
   
   return (
-    <div className="cadastroLogin">
-      <Grid
+    <Grid
+      id="cadastrohab"
       container
-      justify="center"
-      alignItems="center"
+      spacing={0}
       direction="column"
-      style={{ minHeight: "100vh" }}
-      spacing={5}
+      alignItems="center"
+      justify="center"
+      style={{ minHeight: '80vh' }}
     >
       <Typography 
         color="inherit"
@@ -97,8 +97,7 @@ function Curriculum() {
           Cadastrar
         </Button>
       </form>  
-      </Grid>
-    </div>
+    </Grid>
   );
 }
   

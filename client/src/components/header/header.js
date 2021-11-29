@@ -39,7 +39,7 @@ function AppAppBar() {
             <Link
               variant="h6"
               underline="none"
-              href="#cadastro"  
+              href="/login"  
               sx={{ ...rightLink}}
             >
               {'Entrar'}

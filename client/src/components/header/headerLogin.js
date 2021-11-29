@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { Link as RouterLink } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
-import AppBar from './appBar';
-import Toolbar from './toolBar';
+import AppBar from '../header/appBar';
+import Toolbar from '../header/toolBar';
 
 
 const rightLink = {
@@ -13,10 +12,6 @@ const rightLink = {
 };
 
 function AppAppBar() {
-
-  function logOut() {    
-    localStorage.clear();
-  };
   return (
     <div>
       <AppBar position="fixed" style={{ background: '#28282a'}}>
@@ -26,7 +21,7 @@ function AppAppBar() {
             variant="h6"
             underline="none"
             color="inherit"
-            href="/curriculum"
+            href="/"
             sx={{ fontSize: 24 }}
           >
             {'DevDotCom'}
@@ -36,22 +31,18 @@ function AppAppBar() {
               color="inherit"
               variant="h6"
               underline="none"
+              href="/"  
               sx={rightLink}
-              component={RouterLink} to="/inicial"
             >
-              {'Voltar'}
+              {'Cadastrar'}
             </Link>
             <Link
               variant="h6"
               underline="none"
-              href="#cadastro"  
+              href="/login"  
               sx={{ ...rightLink}}
             >
-            <RouterLink to ="/"
-             onClick={logOut}
-            > 
-              {'Sair'}
-            </RouterLink> 
+              {'Entrar'}
             </Link>
           </Box>
         </Toolbar>

@@ -3,8 +3,8 @@ import { useHistory } from "react-router-dom";
 import{
     Button,
     TextField,
+    Grid,
 } from "@material-ui/core";
-import "../assets/form.css";
 import Typography from '../body/typography';
 import { api } from "../../utils/api";
 
@@ -29,14 +29,21 @@ function MyForm() {
     };
   
     return (
-      <div id='cadastro' className="cadastroLogin">
-        <Typography 
+      <Grid
+      container
+      spacing={0}
+      direction="column"
+      alignItems="center"
+      justify="center"
+      style={{ minHeight: '50vh' }}
+      >
+      <Typography 
         color="inherit"
         align="center"
         variant="h5"
         sx={{ mb: 4, mt: { sx: 4, sm: 10 } }}
       >
-        Faça seu de Login
+        Faça seu Login
         </Typography>
         <form onSubmit={(event) => {
           event.preventDefault();
@@ -63,7 +70,7 @@ function MyForm() {
             Enviar
           </Button>
         </form>  
-      </div>
+        </Grid>
     );
   }
   

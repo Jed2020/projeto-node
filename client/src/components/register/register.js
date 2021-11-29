@@ -1,5 +1,5 @@
 import React from "react";
-import { TextField, Button, Box } from "@material-ui/core";
+import { TextField, Button, Box, Grid } from "@material-ui/core";
 import { Field, Form, Formik } from "formik";
 import { object, string } from "yup";
 import { api } from "../../utils/api";
@@ -17,7 +17,15 @@ const initalValues = {
 const FormRegister = () => {
   
   return (
-    <div id='cadastro' className="cadastroLogin">
+    <Grid
+      id='cadastro'
+      container
+      spacing={0}
+      direction="column"
+      alignItems="center"
+      justify="center"
+      style={{ minHeight: '100vh' }}
+      >
       <Typography 
         color="inherit"
         align="center"
@@ -119,7 +127,7 @@ const FormRegister = () => {
           </Form>
         )}
       </Formik>
-    </div>
+    </Grid>
   );
 };
 

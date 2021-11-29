@@ -7,7 +7,8 @@ import Page3 from "./pages/page3";
 import Page4 from "./pages/page4";
 import Page5 from "./pages/page5";
 import Page6 from "./pages/page6";
-import Page7 from "./components/header/navBar";
+import Page7 from "./pages/page7";
+import Page8 from "./pages/page8";
 import PageNotFound from "./pages/pageNotFound";
 
 function Routes() {  
@@ -21,7 +22,8 @@ function Routes() {
       <Route component={Page4} exact path="/editableCurriculum"/>
       <Route component={Page5} exact path="/editableSchool"/>
       <Route component={Page6} exact path="/editableUser"/>]
-      <Route component={Page7} exact path="/menu"/>]
+      <Route component={Page7} exact path="/login"/>]
+      <Route component={Page8} exact path="/school"/>]
       <Route path="*" exact component={PageNotFound}/>
       </Switch>      
     </Router>
