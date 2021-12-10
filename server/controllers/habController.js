@@ -175,10 +175,8 @@ class habController {
             "SELECT id, curso, instituicao, conclusao, situacao, id_cpf, nome FROM tbescolaridade AS T1 INNER JOIN tbcadastro AS T2 ON T1.id_cpf = T2.cpf";   
             db.query(sqlSelect, [id, curso, instituicao, conclusao, situacao, id_cpf, nome], (err, result) => {
                 if (err){
-                console.log(err);
                 return res.status(500).send(err)
                 }
-                console.log(result);
                 return res.status(200).send(result)
             });
         };  
